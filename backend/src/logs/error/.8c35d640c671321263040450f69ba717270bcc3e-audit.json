@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "/Users/andreipopescu/Documents/dev/simplified-backend/src/logs/error/.8c35d640c671321263040450f69ba717270bcc3e-audit.json",
+    "files": [
+        {
+            "date": 1657728686720,
+            "name": "/Users/andreipopescu/Documents/dev/simplified-backend/src/logs/error/2022-07-13.log",
+            "hash": "18fdc303b53d4bee8b2eebef66996424a89e551260061e1f845ee5858c2eeb13"
+        }
+    ],
+    "hashType": "sha256"
+}

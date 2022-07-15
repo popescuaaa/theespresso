@@ -1,0 +1,2 @@
+2022-07-14 13:29:48 error: [GET] /users >> StatusCode:: 500, Message:: Unknown database 'dev'
+2022-07-14 13:30:17 error: [GET] /users >> StatusCode:: 500, Message:: Unknown database 'dev'
