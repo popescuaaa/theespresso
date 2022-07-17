@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../components/ui/Side";
 
-const Dashboard = () => {
+const Dashboard = (): JSX.Element => {
   return (
     <div className="flex">
       <Sidebar />

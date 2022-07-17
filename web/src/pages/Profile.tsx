@@ -1,11 +1,11 @@
 import React from "react";
 import Sidebar from "../components/ui/Side";
 
-const Profile = () => {
+const Profile = (): JSX.Element => {
   return (
-    <div>
+    <div className="flex col">
       <Sidebar />
-      <div>
+      <div className="flex justify-center text-black text-xl">
         <h1>Profile</h1>
       </div>
     </div>
