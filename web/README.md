@@ -16,10 +16,10 @@ npx create-react-app --template tailwindcss-typescript
   - [x] Card
   - [x] Todo list
 
-- [ ] Routing - make it works with dummy pages
+- [x] Routing - make it works with dummy pages
 - [ ] Basic containerisation
   - [ ] React Router and Nginx
-- [ ] Testing - make it works
+- [ ] Testing - make it works ? 
 - [x] Todos context
 - [x] Basic lib axios implementation
 - [x] Install storybook for isolation
