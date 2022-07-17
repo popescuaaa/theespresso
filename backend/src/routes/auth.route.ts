@@ -6,18 +6,33 @@ import authMiddleware from '@middlewares/auth.middleware';
 import validationMiddleware from '@middlewares/validation.middleware';
 
 class AuthRoute implements Routes {
-  public path = '/';
-  public router = Router();
-  public authController = new AuthController();
+  private readonly _path: string = '/';
+  private readonly _router: Router;
+  private readonly _authController: AuthController;
+
+  public get path() {
+    return this._path;
+  }
+
+  public get router() {
+    return this._router;
+  }
+
+  public get authController() {
+    return this._authController;
+  }
 
   constructor() {
+    this._router = Router();
+    this._authController = new AuthController();
+    
     this.initializeRoutes();
   }
 
   private initializeRoutes() {
-    this.router.post(`${this.path}signup`, validationMiddleware(CreateUserDto, 'body'), this.authController.signUp);
-    this.router.post(`${this.path}login`, validationMiddleware(CreateUserDto, 'body'), this.authController.logIn);
-    this.router.post(`${this.path}logout`, authMiddleware, this.authController.logOut);
+    this._router.post(`${this.path}signup`, validationMiddleware(CreateUserDto, 'body'), this.authController.signUp);
+    this._router.post(`${this.path}login`, validationMiddleware(CreateUserDto, 'body'), this.authController.logIn);
+    this._router.post(`${this.path}logout`, authMiddleware, this.authController.logOut);
   }
 }
 
