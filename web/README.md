@@ -16,9 +16,10 @@ npx create-react-app --template tailwindcss-typescript
 - [ ] Basic containerisation
 - [x] Todos context
 - [x] Basic lib axios implementation
-- [ ] Install storybook for isolation
+- [x] Install storybook for isolation
 
 ### Refine step 💅
 - [ ] Style for each component
 - [ ] Add pages to menu 
 - [ ] Interactivity
+- [ ] Clean storybook + create new stories for each component 📖
