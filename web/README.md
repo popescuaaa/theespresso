@@ -6,7 +6,8 @@ npx create-react-app --template tailwindcss-typescript
 
 ### Further steps
 
-- [ ] Branching strategy
+- [x] Branching strategy
+  - main, dev, auxiliaries
 
 ### Ui setup 🌱
 - [x] Define ui main components (basic version)
@@ -18,6 +19,7 @@ npx create-react-app --template tailwindcss-typescript
 - [ ] Routing - make it works with dummy pages
 - [ ] Basic containerisation
   - [ ] React Router and Nginx
+- [ ] Testing - make it works
 - [x] Todos context
 - [x] Basic lib axios implementation
 - [x] Install storybook for isolation
