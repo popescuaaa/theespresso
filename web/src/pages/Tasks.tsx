@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../components/ui/Side";
 
-const Tasks = () => {
+const Tasks = (): JSX.Element => {
   return (
     <div>
       <Sidebar />

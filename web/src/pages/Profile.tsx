@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../components/ui/Side";
 
-const Profile = () => {
+const Profile = (): JSX.Element => {
   return (
     <div className="flex col">
       <Sidebar />
