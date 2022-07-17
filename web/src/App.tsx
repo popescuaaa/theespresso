@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Profile";
+import Tasks from "./pages/Tasks";
+import Landing from "./pages/Landing";
 
 const App = () => {
   const location = useLocation();
@@ -16,7 +19,10 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/tasks" element={<Tasks />} />
       </Routes>
     </>
   );

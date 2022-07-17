@@ -3,9 +3,9 @@ import Sidebar from "../components/ui/Side";
 
 const Profile = () => {
   return (
-    <div>
+    <div className="flex col">
       <Sidebar />
-      <div>
+      <div className="flex justify-center text-black text-xl">
         <h1>Profile</h1>
       </div>
     </div>

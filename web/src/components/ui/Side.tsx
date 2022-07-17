@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import Logo from "../../assets/icons/Logo";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -13,28 +14,15 @@ const Sidebar = () => {
         className={`flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 transform h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-20 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 bg-slate-800 p-4 transition-all duration-200 ease-in-out ${"translate-x-0"}`}
       >
         {/* Sidebar header */}
-        <div className="flex justify-between mb-10 pr-3 sm:px-2">
-          {/* Logo */}
+        <div className="flex justify-center mb-10 pr-3 sm:px-2 text-gray-100 hover:rotate-45">
           <NavLink end to="/" className="block">
-            <h1 className="text-gray-200 text-2xl">Todo</h1>
+            <Logo h={10} w={10} />
           </NavLink>
         </div>
 
         {/* Links */}
         <div className="space-y-8">
-          {/* Pages group */}
           <div>
-            <h3 className="text-xs uppercase text-slate-500 font-semibold pl-3">
-              <span
-                className="hidden lg:block lg:sidebar-expanded:hidden 2xl:hidden text-center w-6"
-                aria-hidden="true"
-              >
-                •••
-              </span>
-              <span className="lg:hidden lg:sidebar-expanded:block 2xl:block">
-                Pages
-              </span>
-            </h3>
             <ul className="mt-3">
               {/* Dashboard */}
               <li
@@ -46,7 +34,7 @@ const Sidebar = () => {
                   end
                   to="/"
                   className={`block text-slate-200 hover:text-white truncate transition duration-150 ${
-                    pathname === "/" && "hover:text-slate-200"
+                    pathname === "/dashboard" && "hover:text-slate-200"
                   }`}
                 >
                   <div className="flex items-center">
