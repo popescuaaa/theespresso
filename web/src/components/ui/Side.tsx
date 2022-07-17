@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import Logo from "../../assets/icons/Logo";
 
-const Sidebar = () => {
+const Sidebar = (): JSX.Element => {
   const location = useLocation();
   const { pathname } = location;
 
