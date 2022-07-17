@@ -1,22 +1,24 @@
-# cra-template-tailwindcss-typescript
 
-A streamlined [Tailwind CSS v3.1](https://tailwindcss.com) template for [Create React App](https://github.com/facebook/create-react-app) in [TypeScript](https://www.typescriptlang.org/).
-
-> This template installs and sets up [Tailwind CSS](https://tailwindcss.com) with TypeScript support.
-
-## Usage
-
+## How to regenerate if needed:
 ```bash
 npx create-react-app --template tailwindcss-typescript
 ```
 
-## Credits
+### Further steps
 
-This project was made possible thanks to the following projects.
+### Ui setup 🌱
+- [x] Define ui main components (basic version)
+  - [x] Sidebar (taken from cruip)
+  - [x] Profile page 
+  - [x] Card
+  - [x] Todo list
 
-1. [GeoffSelby/cra-template-tailwindcss](https://github.com/GeoffSelby/cra-template-tailwindcss) - A streamlined Tailwind CSS template for Create React App (in JavaScript).
-2. [cra-template-typescript](https://github.com/facebook/create-react-app/tree/master/packages/cra-template-typescript) - An official TypeScript template for create-react-app.
+- [ ] Basic containerisation
+- [x] Todos context
+- [x] Basic lib axios implementation
+- [ ] Install storybook for isolation
 
-## License
-
-MIT © [Sung M. Kim](https://sung.codes)
+### Refine step 💅
+- [ ] Style for each component
+- [ ] Add pages to menu 
+- [ ] Interactivity
