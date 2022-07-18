@@ -4,7 +4,7 @@ import { User } from '@interfaces/users.interface';
 import UserService from '@services/users.service';
 
 class UsersController {
-  public _userService: UserService;
+  private _userService: UserService;
 
   constructor() {
     this._userService = new UserService();
