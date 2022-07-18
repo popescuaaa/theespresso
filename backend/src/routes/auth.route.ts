@@ -10,6 +10,13 @@ class AuthRoute implements Routes {
   private readonly _router: Router;
   private readonly _authController: AuthController;
 
+  constructor() {
+    this._router = Router();
+    this._authController = new AuthController();
+    
+    this.initializeRoutes();
+  }
+
   public get path() {
     return this._path;
   }
@@ -20,13 +27,6 @@ class AuthRoute implements Routes {
 
   public get authController() {
     return this._authController;
-  }
-
-  constructor() {
-    this._router = Router();
-    this._authController = new AuthController();
-    
-    this.initializeRoutes();
   }
 
   private initializeRoutes() {
