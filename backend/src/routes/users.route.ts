@@ -5,11 +5,26 @@ import { Routes } from '@interfaces/routes.interface';
 import validationMiddleware from '@middlewares/validation.middleware';
 
 class UsersRoute implements Routes {
-  public path = '/users';
-  public router = Router();
-  public usersController = new UsersController();
+  private readonly _path: string = '/users';
+  private readonly _router: Router;
+  private readonly _usersController: UsersController;
+
+  public get path() {
+    return this._path;
+  }
+
+  public get router() {
+    return this._router;
+  }
+
+  public get usersController() {
+    return this._usersController;
+  }
 
   constructor() {
+    this._router = Router();
+    this._usersController = new UsersController();
+
     this.initializeRoutes();
   }
 
