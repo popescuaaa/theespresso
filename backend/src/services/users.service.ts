@@ -13,8 +13,8 @@ class UserService {
     this._users = DB.Users;
   }
   
-  public async findAllUser(): Promise<User[]> {
-    const allUser: User[] = await this._users.findAll();
+  public async findAllUser(): Promise<Array<User>> {
+    const allUser: Array<User> = await this._users.findAll();
     return allUser;
   }
 

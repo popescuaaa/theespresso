@@ -18,7 +18,7 @@ class App {
   private _env: string;
   private _port: string | number;
 
-  constructor(routes: Routes[]) {
+  constructor(routes: Array<Routes>) {
     this._app = express();
     this._env = NODE_ENV || 'development';
     this._port = PORT || 3000;
@@ -58,7 +58,7 @@ class App {
     this._app.use(cookieParser());
   }
 
-  private initializeRoutes(routes: Routes[]) {
+  private initializeRoutes(routes: Array<Routes>) {
     routes.forEach(route => {
       this._app.use(route.path || '/', route.router);
     });
