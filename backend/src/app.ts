@@ -11,32 +11,19 @@ import { NODE_ENV, PORT, LOG_FORMAT, ORIGIN, CREDENTIALS } from '@config';
 import DB from '@databases';
 import { Routes } from '@interfaces/routes.interface';
 import errorMiddleware from '@middlewares/error.middleware';
-import { logger, stream } from '@utils/logger';
+import { stream } from '@utils/logger';
 
 class App {
   private _app: Application;
-  private _env: string;
-  private _port: string | number;
 
   constructor(routes: Array<Routes>) {
     this._app = express();
-    this._env = NODE_ENV || 'development';
-    this._port = PORT || 3000;
 
     this.connectToDatabase();
     this.initializeMiddlewares();
     this.initializeRoutes(routes);
     this.initializeSwagger();
     this.initializeErrorHandling();
-  }
-
-  public listen() {
-    this._app.listen(this._port, () => {
-      logger.info(`=================================`);
-      logger.info(`======= ENV: ${this._env} =======`);
-      logger.info(`🚀 App listening on the port ${this._port}`);
-      logger.info(`=================================`);
-    });
   }
 
   public getServer() {
