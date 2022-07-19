@@ -4,12 +4,45 @@ import { User } from '@interfaces/users.interface';
 export type UserCreationAttributes = Optional<User, 'id' | 'email' | 'password'>;
 
 export class UserModel extends Model<User, UserCreationAttributes> implements User {
-  public id: number;
-  public email: string;
-  public password: string;
+  private _id: number;
+  private _email: string;
+  private _password: string;
 
-  public readonly createdAt!: Date;
-  public readonly updatedAt!: Date;
+  private readonly _createdAt!: Date;
+  private readonly _updatedAt!: Date;
+
+  public get id() {
+    return this._id;
+  }
+
+  public set id(value: number) {
+    this._id = value;
+  }
+
+  public get email() {
+    return this._email;
+  }
+
+  public set email(value: string) {
+    this._email = value;
+  }
+
+  public get password() {
+    return this._password;
+  }
+
+  public set password(value: string) {
+    this.password = value;
+  }
+
+  public get createdAt() {
+    return this._createdAt;
+  }
+
+  public get updatedAt() {
+    return this._updatedAt;
+  }
+
 }
 
 export default function (sequelize: Sequelize): typeof UserModel {
