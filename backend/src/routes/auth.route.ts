@@ -10,6 +10,13 @@ class AuthRoute implements Routes {
   private readonly _router: Router;
   private readonly _authController: AuthController;
 
+  constructor() {
+    this._router = Router();
+    this._authController = new AuthController();
+    
+    this.initializeRoutes();
+  }
+
   public get path() {
     return this._path;
   }
@@ -22,17 +29,10 @@ class AuthRoute implements Routes {
     return this._authController;
   }
 
-  constructor() {
-    this._router = Router();
-    this._authController = new AuthController();
-    
-    this.initializeRoutes();
-  }
-
   private initializeRoutes() {
-    this._router.post(`${this.path}signup`, validationMiddleware(CreateUserDto, 'body'), this.authController.signUp);
-    this._router.post(`${this.path}login`, validationMiddleware(CreateUserDto, 'body'), this.authController.logIn);
-    this._router.post(`${this.path}logout`, authMiddleware, this.authController.logOut);
+    this._router.post('/signup', validationMiddleware(CreateUserDto, 'body'), this.authController.signUp);
+    this._router.post('/login', validationMiddleware(CreateUserDto, 'body'), this.authController.logIn);
+    this._router.post('/logout', authMiddleware, this.authController.logOut);
   }
 }
 

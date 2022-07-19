@@ -20,7 +20,7 @@ class AuthService {
     if (isEmpty(userData)) throw new HttpException(400, "You're not userData");
 
     const findUser: User = await this._users.findOne({ where: { email: userData.email } });
-    if (findUser) throw new HttpException(409, `You're email ${userData.email} already exists`);
+    if (findUser) throw new HttpException(409, `Your email ${userData.email} already exists`);
 
     const hashedPassword = await hash(userData.password, 10);
     const createUserData: User = await this._users.create({ ...userData, password: hashedPassword });
@@ -32,10 +32,10 @@ class AuthService {
     if (isEmpty(userData)) throw new HttpException(400, "You're not userData");
 
     const findUser: User = await this._users.findOne({ where: { email: userData.email } });
-    if (!findUser) throw new HttpException(409, `You're email ${userData.email} not found`);
+    if (!findUser) throw new HttpException(409, `Your email ${userData.email} not found`);
 
     const isPasswordMatching: boolean = await compare(userData.password, findUser.password);
-    if (!isPasswordMatching) throw new HttpException(409, "You're password not matching");
+    if (!isPasswordMatching) throw new HttpException(409, "Your password not matching");
 
     const tokenData = this.createToken(findUser);
     const cookie = this.createCookie(tokenData);

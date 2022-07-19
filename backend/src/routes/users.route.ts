@@ -9,6 +9,13 @@ class UsersRoute implements Routes {
   private readonly _router: Router;
   private readonly _usersController: UsersController;
 
+  constructor() {
+    this._router = Router();
+    this._usersController = new UsersController();
+
+    this.initializeRoutes();
+  }
+
   public get path() {
     return this._path;
   }
@@ -21,19 +28,12 @@ class UsersRoute implements Routes {
     return this._usersController;
   }
 
-  constructor() {
-    this._router = Router();
-    this._usersController = new UsersController();
-
-    this.initializeRoutes();
-  }
-
   private initializeRoutes() {
-    this.router.get(`${this.path}`, this.usersController.getUsers);
-    this.router.get(`${this.path}/:id(\\d+)`, this.usersController.getUserById);
-    this.router.post(`${this.path}`, validationMiddleware(CreateUserDto, 'body'), this.usersController.createUser);
-    this.router.put(`${this.path}/:id(\\d+)`, validationMiddleware(CreateUserDto, 'body', true), this.usersController.updateUser);
-    this.router.delete(`${this.path}/:id(\\d+)`, this.usersController.deleteUser);
+    this.router.get('/', this.usersController.getUsers);
+    this.router.get('/:id(\\d+)', this.usersController.getUserById);
+    this.router.post('/', validationMiddleware(CreateUserDto, 'body'), this.usersController.createUser);
+    this.router.put('/:id(\\d+)', validationMiddleware(CreateUserDto, 'body', true), this.usersController.updateUser);
+    this.router.delete('/:id(\\d+)', this.usersController.deleteUser);
   }
 }
 

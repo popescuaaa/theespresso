@@ -4,7 +4,7 @@ import { User } from '@interfaces/users.interface';
 import UserService from '@services/users.service';
 
 class UsersController {
-  public _userService: UserService;
+  private _userService: UserService;
 
   constructor() {
     this._userService = new UserService();
@@ -12,7 +12,7 @@ class UsersController {
 
   public getUsers = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const findAllUsersData: User[] = await this._userService.findAllUser();
+      const findAllUsersData: Array<User> = await this._userService.findAllUser();
 
       res.status(200).json({ data: findAllUsersData, message: 'findAll' });
     } catch (error) {

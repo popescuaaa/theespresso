@@ -13,8 +13,8 @@ class UserService {
     this._users = DB.Users;
   }
   
-  public async findAllUser(): Promise<User[]> {
-    const allUser: User[] = await this._users.findAll();
+  public async findAllUser(): Promise<Array<User>> {
+    const allUser: Array<User> = await this._users.findAll();
     return allUser;
   }
 
@@ -31,7 +31,7 @@ class UserService {
     if (isEmpty(userData)) throw new HttpException(400, "You're not userData");
 
     const findUser: User = await this._users.findOne({ where: { email: userData.email } });
-    if (findUser) throw new HttpException(409, `You're email ${userData.email} already exists`);
+    if (findUser) throw new HttpException(409, `Your email ${userData.email} already exists`);
 
     const hashedPassword = await hash(userData.password, 10);
     const createUserData: User = await this._users.create({ ...userData, password: hashedPassword });
