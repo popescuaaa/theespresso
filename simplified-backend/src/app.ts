@@ -9,9 +9,6 @@ import connectDB from "./utils/connect-db";
 
 import userRouter from "./routes/user.route";
 import authRouter from "./routes/auth.route";
-import appointmentRouter from "./routes/appointment.route";
-import feedbackRouter from "./routes/feedback.route";
-import adviceRouter from "./routes/advice.route";
 
 const app = express();
 
@@ -37,9 +34,6 @@ app.use(
 // 5. Routes
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
-app.use("/api/appointment", appointmentRouter);
-app.use("/api/feedback", feedbackRouter);
-app.use("/api/advice", adviceRouter);
 
 // Testing
 app.get("/healthChecker", (req: Request, res: Response, next: NextFunction) => {

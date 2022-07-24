@@ -1,8 +1,8 @@
 docker stop $(docker ps -aq)
 
-docker rm $(docker ps -aq)
+docker rm mongo redis
 
-docker rmi $(docker images -aq)
+docker rmi mongo redis
 
 docker volume prune
 

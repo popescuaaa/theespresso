@@ -1,5 +1,5 @@
 {
-  "name": "medical-app",
+  "name": "simplified-backend",
   "version": "1.0.0",
   "main": "src/app.ts",
   "license": "MIT",
@@ -34,9 +34,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node-dev --respawn --transpile-only src/app.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts"
   },
   "keywords": [],
-  "author": "",
-  "description": ""
+  "author": "Andrei Popescu",
+  "description": "A simplified express backend"
 }
