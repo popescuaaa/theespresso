@@ -1,9 +1,4 @@
-# SETUP
-
-> node v16.16.0
-
-> npm v8.15.0
-
+# Progress
 - Add new entry to db:
   - model
   - schema
@@ -14,7 +9,8 @@
 
 ### Todo:
 - [ ] Add a logger (winston) for container phase
-- [ ] Swagger 
-- [ ] Clean vlad models and let only:
-  - [ ] user 
-  - [ ] task
+- [ ] Swagger
+- [ ] Jest setup for testing
+- [x] Clean vlad models and let only:
+  - [x] user 
+  - [x] task

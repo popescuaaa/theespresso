@@ -1,5 +1,4 @@
 import {
-  DocumentType,
   getModelForClass,
   index,
   modelOptions,
@@ -10,10 +9,7 @@ import bcrypt from "bcryptjs";
 
 @index({ email: 1 })
 @pre<User>("save", async function () {
-  // Hash password if the password is new or was updated
   if (!this.isModified("password")) return;
-
-  // Hash password with costFactor of 12
   this.password = await bcrypt.hash(this.password, 12);
 })
 @modelOptions({
@@ -25,20 +21,8 @@ import bcrypt from "bcryptjs";
 
 // Export the User class to be used as TypeScript type
 export class User {
-  @prop({ required: true })
-  firstName: string;
-
-  @prop({ required: true })
-  lastName: string;
-
-  @prop({ required: true })
-  age: number;
-
-  @prop({ required: true })
-  sex: string;
-
-  @prop({ required: true })
-  address: string;
+  @prop({ unique: true, required: true })
+  name: string;
 
   @prop({ unique: true, required: true })
   email: string;

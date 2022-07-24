@@ -1,4 +1,4 @@
-docker stop $(docker ps -aq)
+docker stop redis mongo
 
 docker rm mongo redis
 

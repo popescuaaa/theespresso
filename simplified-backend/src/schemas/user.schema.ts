@@ -2,14 +2,10 @@ import { number, object, string, TypeOf } from "zod";
 
 export const createUserSchema = object({
   body: object({
-    firstName: string({ required_error: "First name is required" }),
-    lastName: string({ required_error: "Last name is required" }),
+    name: string({ required_error: "Name is required" }),
     email: string({ required_error: "Email is required" }).email(
       "Invalid email"
     ),
-    sex: string({ required_error: "Sex is required" }),
-    age: number({ required_error: "Age is required" }),
-    address: string({ required_error: "Address is required" }),
     password: string({ required_error: "Password is required" })
       .min(8, "Password must be more than 8 characters")
       .max(32, "Password must be less than 32 characters"),

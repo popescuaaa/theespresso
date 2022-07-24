@@ -11,7 +11,6 @@ export const requireUser = (
     if (!user) {
       return next(new AppError(`Invalid token or session has expired`, 401));
     }
-
     next();
   } catch (err: any) {
     next(err);

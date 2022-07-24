@@ -29,12 +29,8 @@ export const registerHandler = async (
   try {
     const user = await createUser({
       email: req.body.email,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
+      name: req.body.name,
       password: req.body.password,
-      sex: req.body.sex,
-      age: req.body.age,
-      address: req.body.address,
     });
 
     res.status(201).json({

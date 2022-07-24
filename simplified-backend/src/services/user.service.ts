@@ -1,4 +1,4 @@
-import { omit, get } from "lodash";
+import { omit } from "lodash";
 import { FilterQuery, QueryOptions } from "mongoose";
 import config from "config";
 import userModel, { User } from "../models/user.model";
@@ -6,7 +6,6 @@ import { excludedFields } from "../controllers/auth.controller";
 import { signJwt } from "../utils/jwt";
 import redisClient from "../utils/connect-redis";
 import { DocumentType } from "@typegoose/typegoose";
-import { stringify } from "querystring";
 
 // CreateUser service
 export const createUser = async (input: Partial<User>) => {

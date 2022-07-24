@@ -1,15 +1,16 @@
 import { Router } from "express";
-import {
-  getAllUsersHandler,
-  getMeHandler,
-} from "../controllers/user.controller";
+
 import { deserializeUser } from "../middleware/deserialize-user";
 import { requireUser } from "../middleware/require-user";
 import { restrictTo } from "../middleware/restrict-to";
+import {
+  getAllUserTasksHandler,
+  registerTaskHandler,
+} from "../controllers/task.controller";
 
 const router = Router();
 router.use(deserializeUser, requireUser);
-router.get("/", restrictTo("admin"), getAllUsersHandler);
-router.get("/me", getMeHandler);
+router.post("/", restrictTo("user"), getAllUserTasksHandler);
+router.post("/create", restrictTo("user"), registerTaskHandler);
 
 export default router;
