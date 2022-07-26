@@ -14,3 +14,5 @@
 - [x] Clean vlad models and let only:
   - [x] user 
   - [x] task
+- [ ] Dockerfile for backend 
+- [ ] network for all (compose)
