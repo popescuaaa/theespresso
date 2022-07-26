@@ -1,4 +1,6 @@
-require("dotenv").config();
+require("dotenv").config({
+  path: "./.env.local",
+});
 
 import express, { NextFunction, Request, Response } from "express";
 import morgan from "morgan";
