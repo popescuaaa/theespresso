@@ -21,7 +21,7 @@ const Home = () => {
                                 key={item}
                                 title={`Task number @${item}`}
                                 description={`This is a description for task number @${item}`}
-                                status="in-progress"
+                                status={item % 2 == 0 ? "inProgress" : "done"}
                                 dueDate="2020-01-01"
                                 id={item}
                                 priority="high"

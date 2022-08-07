@@ -18,7 +18,7 @@ const Login = () => {
     return (
         <>
             <div className="container">
-                <div className="col">
+                <div>
                     <div className="row">
                         <h1> Welcome back! </h1>
                     </div>
@@ -26,7 +26,7 @@ const Login = () => {
                         <LoginForm onSubmit={onSubmit} />
                     </div>
                 </div>
-                <div className="col">
+                <div>
                     <div className="row">
                         <img src={login} alt="Avatar" className="avatar" />
                     </div>
