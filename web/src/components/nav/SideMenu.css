@@ -1,0 +1,51 @@
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    background-color: black;
+    overflow-x: hidden;
+    padding-top: 60px;
+    border-right: 1px solid #e5e5e5;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+
+.side-menu-header {
+    padding: 0 20px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #777;
+}
+
+.side-menu-header-title {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    color: #e5e5e5;
+    text-transform: uppercase;
+}
+
+.side-menu-body {
+    padding: 20px;
+    color: #e5e5e5;
+}
+
+.side-menu-body-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.side-menu-body-item-title {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    color: #e5e5e5;
+}
+
+.active {
+    color: #e5e5e5;
+}
