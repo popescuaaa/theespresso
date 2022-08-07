@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 75%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.home-title {
+    font-size: 2em;
+    font-weight: normal;
+    color: black;
+}
+
+.home-body {
+    font-size: 1em;
+    font-weight: normal;
+    color: black;
+    margin-bottom: 1em;
+}
+
+.home-feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    font-size: 1em;
+    font-weight: normal;
+    color: black;
+    margin-bottom: 1em;
+}
