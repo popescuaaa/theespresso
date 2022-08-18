@@ -3,25 +3,35 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 75%;
-    font-family: 'Courier New', Courier, monospace;
+
 }
 
 .home-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     font-size: 2em;
     font-weight: normal;
     color: black;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .home-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     font-size: 1em;
     font-weight: normal;
     color: black;
     margin-bottom: 1em;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .home-feed {
+    width: auto !important;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,6 +1,4 @@
 ## Todo
-
-
 - [ ] Finish general style for all pages
 - [ ] Create axios client
 - [ ] Create + test serivces for all backend part

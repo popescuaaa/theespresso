@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <>
             <SideMenu />
-            <div className="container">
+            <div>
                 <div className="home-title">
                     Welcome back {user}.
                 </div>
