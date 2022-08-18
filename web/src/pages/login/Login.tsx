@@ -32,9 +32,6 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-            <footer className="footer">
-                <p>All rights reserved. @popescuaaa {dateToLocal}</p>
-            </footer>
         </>
     );
 }
