@@ -1,15 +1,19 @@
 .side-menu {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 15%;
+    left: -15em;
+    width: 15em;
     height: 100%;
     background-color: black;
-    overflow-x: hidden;
     padding-top: 60px;
     border-right: 1px solid #e5e5e5;
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
+    transition: left 500ms ease-in-out;
+}
+
+.side-menu-expanded {
+    left: 0;
 }
 
 .side-menu-header {
@@ -23,8 +27,8 @@
 
 .side-menu-header-title {
     display: inline-block;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: xx-large;
+    font-weight: bold;
     color: #e5e5e5;
     text-transform: uppercase;
 }
@@ -32,6 +36,10 @@
 .side-menu-body {
     padding: 20px;
     color: #e5e5e5;
+}
+
+.side-menu-body a {
+    text-decoration: none;
 }
 
 .side-menu-body-item {
@@ -42,10 +50,37 @@
 .side-menu-body-item-title {
     display: inline-block;
     font-size: 20px;
-    font-weight: 500;
     color: #e5e5e5;
 }
 
-.active {
+.side-menu-body-item-title a {
+    letter-spacing: 1.75px;
     color: #e5e5e5;
+}
+
+.side-menu-body-item-title:hover {
+    font-weight: bold;
+}
+
+.active {
+    font-weight: bold;
+    color: #e5e5e5;
+}
+
+.btn-trigger {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    position: relative;
+    border: none;
+    left: 15em;
+    color: #ffffff;
+    background-color: #337ab7;
+    transition: transform 500ms ease-in-out;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-trigger-expanded {
+    transform: rotate(180deg);
 }

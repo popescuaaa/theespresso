@@ -25,7 +25,10 @@ const TaskCard: React.FC<TaskCardProps> = ({
                 <p className="card-text">{description}</p>
                 <p className="card-text">{dueDate}</p>
                 <p className="card-text">{priority}</p>
-                {status == "inProgress" ? <p className="card-status-progress">In Progress</p> : <p className="card-status-other">{status}</p>}
+                {status === "inProgress" ? 
+                    <p className="card-status card-status-progress">In Progress</p> :
+                    <p className="card-status card-status-other">{status}</p>
+                }
             </div>
         </div>
     );

@@ -7,11 +7,11 @@ const Home = () => {
     const user = "John Doe";
 
     return (
-        <>
+        <div className="page">
             <SideMenu />
             <div>
                 <div className="home-title">
-                    Welcome back {user}.
+                    <p>Welcome back <span>{user}</span>.</p>
                 </div>
                 <div className="home-body">
                     <p>Let's take a look at the latest updates</p>
@@ -30,7 +30,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
