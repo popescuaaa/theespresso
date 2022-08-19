@@ -5,7 +5,7 @@ interface TaskCardProps {
     title: string;
     description: string;
     dueDate: string;
-    priority: string;
+    priority: "high" | "medium" | "low";
     status: "todo" | "inProgress" | "done";
     id: number;
 }
@@ -24,7 +24,7 @@ const TaskCard: React.FC<TaskCardProps> = ({
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">{description}</p>
                 <p className="card-text">{dueDate}</p>
-                <p className="card-text">{priority}</p>
+                <span className={"badge" + " badge-" + priority}>{priority}</span>
                 {status === "inProgress" ? 
                     <p className="card-status card-status-progress">In Progress</p> :
                     <p className="card-status card-status-other">{status}</p>

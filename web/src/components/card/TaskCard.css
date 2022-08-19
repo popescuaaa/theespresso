@@ -1,13 +1,14 @@
 .card {
-    background-color: #f0f5f7;
+    background-color: #272727;
     border-radius: 2px;
-    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15);
     padding: 15px;
+    border-radius: 5px;
 }
 
 .card * {
     margin: 0;
     padding: 1em 0 !important;
+
 }
 
 .card-body {
@@ -17,19 +18,20 @@
 .card-title {
     font-size: 1.5em;
     font-weight: bold;
+    color: #ffffff;
 }
 
 .card-text {
     font-size: 0.8em;
+    color: #ffffff;
 }
 
 .card-status {
-    width: auto !important;
     font-size: 0.8em;
     font-weight: bold;
     color: #ffffff;
     padding: 1em;
-    margin: 1em 0;
+    margin-top: 1.5em;
     text-align: center;
     border-radius: 5px;
 }
@@ -40,4 +42,25 @@
 
 .card-status-other {
     background-color: #b37d00;
+}
+
+.badge {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.75em;
+    padding: 0.5em !important;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+
+.badge-high {
+    background-color: #c41515;
+}
+
+.badge-medium {
+    background-color: #edf035;
+}
+
+.badge-low {
+    background-color: #2ae224;
 }
