@@ -13,7 +13,7 @@ const SideMenu = () => {
         <div className={"side-menu" + (expanded ? " side-menu-expanded" : "")}>
             <div className="side-menu-header">
                 <button onClick={() => setExpanded(!expanded)} className={"btn-trigger" + (expanded ? " btn-trigger-expanded" : "")}>
-                    &gt;&gt;
+                    <i className="fa-solid fa-angles-right"/>
                 </button>
                 <div className="side-menu-header-title">
                     Todo's
@@ -23,6 +23,7 @@ const SideMenu = () => {
                 {siteMap.map((item, index) => {
                     return (
                         <div className="side-menu-body-item" key={index}>
+                            <i className={item.icon}/>
                             <div className="side-menu-body-item-title">
                                 <Link onClick={() => setExpanded(false)} to={item.path} className={path === item.path ? "active" : ""}>
                                     {item.name}

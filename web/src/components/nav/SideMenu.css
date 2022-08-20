@@ -47,6 +47,10 @@
     border-bottom: 1px solid #e5e5e5;
 }
 
+.side-menu-body-item i {
+    padding: 0 1em;    
+}
+
 .side-menu-body-item-title {
     display: inline-block;
     font-size: 20px;
