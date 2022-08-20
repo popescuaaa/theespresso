@@ -55,6 +55,7 @@
     display: inline-block;
     font-size: 20px;
     color: #e5e5e5;
+    transition: font-size 100ms ease-in-out;
 }
 
 .side-menu-body-item-title a {
@@ -64,6 +65,7 @@
 
 .side-menu-body-item-title:hover {
     font-weight: bold;
+    font-size: 1.35em;
 }
 
 .active {

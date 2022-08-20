@@ -23,9 +23,9 @@ const SideMenu = () => {
                 {siteMap.map((item, index) => {
                     return (
                         <div className="side-menu-body-item" key={index}>
-                            <i className={item.icon}/>
                             <div className="side-menu-body-item-title">
                                 <Link onClick={() => setExpanded(false)} to={item.path} className={path === item.path ? "active" : ""}>
+                                    <i className={item.icon}/>
                                     {item.name}
                                 </Link>
                             </div>
