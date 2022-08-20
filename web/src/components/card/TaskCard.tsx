@@ -22,8 +22,10 @@ const TaskCard: React.FC<TaskCardProps> = ({
         <div className="card" key={id}>
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
+                <hr/>
                 <p className="card-text">{description}</p>
                 <p className="card-text">{dueDate}</p>
+                <hr/>
                 <span className={"badge" + " badge-" + priority}>{priority}</span>
                 {status === "inProgress" ? 
                     <p className="card-status card-status-progress">In Progress</p> :

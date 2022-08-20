@@ -1,5 +1,4 @@
 import React from "react";
-import SideMenu from "../../components/nav/SideMenu";
 import "./Home.css";
 import TaskCard from "../../components/card/TaskCard";
 
@@ -7,8 +6,7 @@ const Home = () => {
     const user = "John Doe";
 
     return (
-        <div className="page">
-            <SideMenu />
+        <>
             <div>
                 <div className="home-title">
                     <p>Welcome back <span>{user}</span>.</p>
@@ -30,7 +28,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 

@@ -1,8 +1,8 @@
 .side-menu {
     position: fixed;
     top: 0;
-    left: -15em;
-    width: 15em;
+    left: -20em;
+    width: 20em;
     height: 100%;
     background-color: #222222;
     padding-top: 60px;
@@ -68,17 +68,20 @@
 }
 
 .btn-trigger {
+    position: relative;
     width: 3em;
     height: 3em;
+    left: 21em;
     border-radius: 50%;
-    position: relative;
     border: none;
-    left: 15em;
     color: #ffffff;
-    background-color: #337ab7;
+    background-color: #00a4b3;
     transition: transform 500ms ease-in-out;
     font-weight: bold;
     cursor: pointer;
+    padding: 0;
+    border: none;
+    outline: none;
 }
 
 .btn-trigger-expanded {

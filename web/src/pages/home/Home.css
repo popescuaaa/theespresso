@@ -41,10 +41,6 @@
     flex-wrap: wrap;
 }
 
-.page {
-    padding: 1em;
-}
-
 @media only screen and (min-width: 700px) {
     .home-feed {
         grid-template-columns: repeat(2, 1fr);
