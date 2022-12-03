@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { siteMap } from "./siteMap";
 import { Link, useLocation } from "react-router-dom";
 import "./SideMenu.css";
@@ -7,9 +7,14 @@ const SideMenu = () => {
     const location = useLocation();
     const path = location.pathname;
 
+    const [expanded, setExpanded] = useState(false);
+
     return (
-        <div className="side-menu">
+        <div className={"side-menu" + (expanded ? " side-menu-expanded" : "")}>
             <div className="side-menu-header">
+                <button onClick={() => setExpanded(!expanded)} className={"btn-trigger" + (expanded ? " btn-trigger-expanded" : "")}>
+                    <i className="fa-solid fa-angles-right"/>
+                </button>
                 <div className="side-menu-header-title">
                     Todo's
                 </div>
@@ -19,7 +24,8 @@ const SideMenu = () => {
                     return (
                         <div className="side-menu-body-item" key={index}>
                             <div className="side-menu-body-item-title">
-                                <Link to={item.path} className={path === item.path ? "active" : ""}>
+                                <Link onClick={() => setExpanded(false)} to={item.path} className={path === item.path ? "active" : ""}>
+                                    <i className={item.icon}/>
                                     {item.name}
                                 </Link>
                             </div>

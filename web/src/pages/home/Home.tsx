@@ -1,5 +1,4 @@
 import React from "react";
-import SideMenu from "../../components/nav/SideMenu";
 import "./Home.css";
 import TaskCard from "../../components/card/TaskCard";
 
@@ -8,10 +7,9 @@ const Home = () => {
 
     return (
         <>
-            <SideMenu />
-            <div className="container">
+            <div>
                 <div className="home-title">
-                    Welcome back {user}.
+                    <p>Welcome back <span>{user}</span>.</p>
                 </div>
                 <div className="home-body">
                     <p>Let's take a look at the latest updates</p>
@@ -21,7 +19,7 @@ const Home = () => {
                                 key={item}
                                 title={`Task number @${item}`}
                                 description={`This is a description for task number @${item}`}
-                                status="in-progress"
+                                status={item % 2 == 0 ? "inProgress" : "done"}
                                 dueDate="2020-01-01"
                                 id={item}
                                 priority="high"

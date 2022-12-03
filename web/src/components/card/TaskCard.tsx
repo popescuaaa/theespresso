@@ -1,11 +1,12 @@
 import React from "react";
+import "./TaskCard.css";
 
 interface TaskCardProps {
     title: string;
     description: string;
     dueDate: string;
-    priority: string;
-    status: string;
+    priority: "high" | "medium" | "low";
+    status: "todo" | "inProgress" | "done";
     id: number;
 }
 
@@ -18,13 +19,18 @@ const TaskCard: React.FC<TaskCardProps> = ({
     id
 }) => {
     return (
-        <div className="card">
+        <div className="card" key={id}>
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
+                <hr/>
                 <p className="card-text">{description}</p>
                 <p className="card-text">{dueDate}</p>
-                <p className="card-text">{priority}</p>
-                <p className="card-text">{status}</p>
+                <hr/>
+                <span className={"badge" + " badge-" + priority}>{priority}</span>
+                {status === "inProgress" ? 
+                    <p className="card-status card-status-progress">In Progress</p> :
+                    <p className="card-status card-status-other">{status}</p>
+                }
             </div>
         </div>
     );

@@ -18,6 +18,8 @@
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
 }
 
 .btn-primary {

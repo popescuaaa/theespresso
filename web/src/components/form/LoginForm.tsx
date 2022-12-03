@@ -28,7 +28,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
                 <small className="form-text text-muted">Don't worry. We have strong security for your email.</small>
                 <input type="password" className="form-control" placeholder="Password" value={password} onChange={handlePasswordChange} />
                 <div className="horizontal-divider" />
-                <Button title="Login" type="primary" onClick={handleSubmit} />
+                <Button title="Login" type="secondary" onClick={handleSubmit} />
             </div>
         </form>
     )

@@ -1,9 +1,9 @@
-.container {
+.row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    width: auto;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -15,6 +15,7 @@
 
 .page-not-found-subtitle {
     font-size: 20px;
-    font-weight: 500;
-    color: lightcoral;
+    font-weight: 700;
+    color: rgb(236, 68, 68);
+
 }

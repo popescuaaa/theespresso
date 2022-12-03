@@ -1,14 +1,17 @@
 export const siteMap = [
     {
         name: 'Home',
-        path: '/home'
+        path: '/home',
+        icon: 'fa-solid fa-house'
     },
     {
         name: 'About',
-        path: '/about'
+        path: '/about',
+        icon: 'fa-solid fa-circle-info'
     },
     {
         name: 'Profile',
-        path: '/profile'
+        path: '/profile',
+        icon: 'fa-solid fa-user'
     }
 ];

@@ -3,14 +3,14 @@ import "./PageNotFound.css";
 
 const PageNotFound: React.FC = () => {
     return (
-        <div className="container">
-            <div className="page-not-found-title">
+        <>
+            <p className="page-not-found-title row">
                 Page not found
-            </div>
-            <div className="page-not-found-subtitle">
+            </p>
+            <p className="page-not-found-subtitle row">
                 The page you are looking for does not exist.
-            </div>
-        </div>
+            </p>
+        </>
     );
 }
 
