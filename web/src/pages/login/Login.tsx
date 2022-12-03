@@ -1,13 +1,10 @@
 import React from "react";
 import "./Login.css";
-import login from "../../assets/background/login.jpg";
 import LoginForm from "../../components/form/LoginForm";
 import { useNavigate } from "react-router-dom";
+import { Flex, Box, Heading, Stack, Avatar, Link } from '@chakra-ui/react'
 
-
-const Login = () => {
-    const date = new Date();
-    const dateToLocal = date.toLocaleDateString();
+const Login: React.FC<{}> = () => {
     const navigator = useNavigate();
 
     const onSubmit = (email: string, password: string) => {
@@ -16,23 +13,33 @@ const Login = () => {
     }
 
     return (
-        <>
-            <div className="container">
-                <div>
-                    <div className="row">
-                        <h1> Welcome back! </h1>
-                    </div>
-                    <div className="row">
-                        <LoginForm onSubmit={onSubmit} />
-                    </div>
-                </div>
-                <div>
-                    <div className="row">
-                        <img src={login} alt="Avatar" className="avatar" />
-                    </div>
-                </div>
-            </div>
-        </>
+        <Flex
+            flexDirection="column"
+            width="100wh"
+            height="90vh"
+            justifyContent="center"
+            alignItems="center"
+        >
+            <Stack
+                flexDir="column"
+                mb="2"
+                justifyContent="center"
+                alignItems="center"
+            >
+                <Avatar bg="teal.500" />
+                <Heading color="teal.400">Welcome</Heading>
+                <Box minW={{ base: "90%", md: "468px" }}>
+                    <LoginForm onSubmit={onSubmit} />
+                </Box>
+            </Stack>
+            <Box>
+                New to us?{" "}
+                <Link color="teal.500" href="#">
+                    Sign Up
+                </Link>
+            </Box>
+        </Flex>
+
     );
 }
 

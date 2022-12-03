@@ -1,5 +1,6 @@
 import React from "react";
-import "./TaskCard.css";
+import { Card, CardBody, CardFooter } from '@chakra-ui/react'
+import { Heading, Text, Stack, Image, Button, ButtonGroup, Divider } from '@chakra-ui/react'
 
 interface TaskCardProps {
     title: string;
@@ -19,20 +20,39 @@ const TaskCard: React.FC<TaskCardProps> = ({
     id
 }) => {
     return (
-        <div className="card" key={id}>
-            <div className="card-body">
-                <h5 className="card-title">{title}</h5>
-                <hr/>
-                <p className="card-text">{description}</p>
-                <p className="card-text">{dueDate}</p>
-                <hr/>
-                <span className={"badge" + " badge-" + priority}>{priority}</span>
-                {status === "inProgress" ? 
-                    <p className="card-status card-status-progress">In Progress</p> :
-                    <p className="card-status card-status-other">{status}</p>
-                }
-            </div>
-        </div>
+        <Card maxW='sm' key={id}>
+            <CardBody>
+                <Image
+                    src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
+                    alt='Green double couch with wooden legs'
+                    borderRadius='sm'
+                />
+                <Stack mt='6' spacing='3'>
+                    <Heading size='md'>{title}</Heading>
+                    <Text>
+                        The deadline for this task is: {dueDate} and its current status is {status == "todo" ? "To Do" : status == "inProgress" ? "In Progress" : "Done"}
+                    </Text>
+                    <Text>
+                        {description}
+                    </Text>
+                    <Text color={priority == "high" ? "red.400" : 'blue.600'} fontSize='2xl'>
+                        {priority == "high" ? "High Priority" : priority == "medium" ? "Medium Priority" : "Low Priority"}
+                    </Text>
+
+                </Stack>
+            </CardBody>
+            <Divider />
+            <CardFooter>
+                <ButtonGroup spacing='2'>
+                    <Button variant='solid' colorScheme='blue'>
+                        Edit
+                    </Button>
+                    <Button variant='solid' colorScheme='orange'>
+                        Delete
+                    </Button>
+                </ButtonGroup>
+            </CardFooter>
+        </Card>
     );
 }
 

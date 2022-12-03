@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import Button from "../button/Button";
-import "./LoginForm.css";
+import {
+    FormControl,
+    FormLabel,
+    Divider,
+    Input,
+    Button
+} from '@chakra-ui/react'
 
 interface LoginFormProps {
     onSubmit: (email: string, password: string) => void;
 }
-
 
 const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
 
@@ -22,15 +26,16 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
     }
 
     return (
-        <form>
-            <div className="form-group">
-                <input type="email" className="form-control" placeholder="Enter email" value={email} onChange={handleEmailChange} />
-                <small className="form-text text-muted">Don't worry. We have strong security for your email.</small>
-                <input type="password" className="form-control" placeholder="Password" value={password} onChange={handlePasswordChange} />
-                <div className="horizontal-divider" />
-                <Button title="Login" type="secondary" onClick={handleSubmit} />
-            </div>
-        </form>
+        <FormControl isInvalid={email == "" && password == ""}>
+            <FormLabel>Email</FormLabel>
+            <Input type='email' value={email} onChange={handleEmailChange} size="lg" />
+            <FormLabel mt='2'>Password</FormLabel>
+            <Input type='password' value={password} onChange={handlePasswordChange} size="lg" />
+            <Divider mt={2} mb={2} />
+            <Button colorScheme='teal' size='lg' onClick={handleSubmit}>
+                Login
+            </Button>
+        </FormControl>
     )
 
 }
