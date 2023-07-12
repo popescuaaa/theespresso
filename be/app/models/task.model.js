@@ -16,3 +16,4 @@ module.exports = mongoose => {
     );
     return Task;
 };
+

@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const db = require("./app/models");
+const populate = require("./populate");
 
 const app = express();
 
@@ -24,6 +25,7 @@ db.mongoose
     })
     .then(() => {
         console.log("Connected to the database!");
+        populate();
     })
     .catch(err => {
         console.log("Cannot connect to the database!", err);
