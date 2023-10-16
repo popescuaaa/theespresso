@@ -1,11 +1,12 @@
 import os
-from flask import Flask, request
-from api import users_blueprint
+from flask import Flask
+from api import users_blueprint, tasks_blueprint
 from db import populate
 
 """ Create Flask app """
 app = Flask(__name__)
 app.register_blueprint(users_blueprint)
+app.register_blueprint(tasks_blueprint)
 
 """ Populate database """
 populate()
@@ -13,11 +14,6 @@ populate()
 @app.route("/")
 def health_check():
     return {"message": "Healthy"}
-
-
-@app.route("/api/", methods=['GET'])
-def base():
-    return {"message": "Hello, World!"}
 
 
 """ Run Flask app """

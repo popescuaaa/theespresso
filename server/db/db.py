@@ -3,7 +3,7 @@ from tinydb.storages import JSONStorage
 from tinydb.middlewares import CachingMiddleware
 import uuid
 
-db = TinyDB("./db.json", storage=CachingMiddleware(JSONStorage))
+db = TinyDB("./db.json")
 
 users_table = db.table("users")
 tasks_table = db.table("tasks")
@@ -11,14 +11,15 @@ tasks_table = db.table("tasks")
 Users = Query()
 Tasks = Query()
 
+
 def populate() -> None:
-    users_table.insert({"name": "Andrei", "role": "user", "id": uuid.uuid4()})
+    users_table.insert({"name": "Andrei", "role": "user", "id": str(uuid.uuid4())})
 
     tasks_table.insert(
         {
             "title": "Resolve bugs",
             "description": "Resolve the bugs in prod",
             "user_id": None,
-            "id": uuid.uuid4(),
+            "id": str(uuid.uuid4()),
         }
     )
