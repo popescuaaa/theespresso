@@ -8,12 +8,16 @@ def get_all_tasks():
     return tasks_table.all()
 
 @tasks_blueprint.route("/<id>", methods=["GET"])
-def get_user(id: str):
+def get_task(id: str):
     return tasks_table.search(Tasks.id == id)
 
-@tasks_blueprint.route("/<user_id>", methods=["GET"])
-def get_user_tasks(user_id: str):
-    return tasks_table.search(Tasks.user_id == user_id)
+@tasks_blueprint.route("/user_tasks", methods=["POST"])
+def get_user_tasks():
+    data = request.get_json()
+    if "user_id" in data:
+        return tasks_table.search(Tasks.user_id == data["user_id"])
+    else:
+        return []
 
 @tasks_blueprint.route("/assign", methods=["POST"])
 def assign_task_to_user():
@@ -22,8 +26,7 @@ def assign_task_to_user():
     if "user_id" in request_data and "task_id" in request_data:
         tasks = tasks_table.search(Tasks.id == request_data["task_id"])
         if len(tasks):
-            task = tasks[0]
-            tasks_table.update({"user_id": request_data["user_id"]}, Tasks.id == task.id)
+            tasks_table.update({"user_id": request_data["user_id"]}, Tasks.id == request_data["task_id"])
 
     return tasks_table.all()
 

@@ -1,5 +1,7 @@
 FROM python:3.11
 
+EXPOSE 5000
+
 # Run commands from /app directory inside container
 WORKDIR /app
 
@@ -12,4 +14,4 @@ RUN pip install -r requirements.txt --no-cache-dir
 # Copy everything from the current dir to the image
 COPY . .
 
-ENTRYPOINT python app.py
+ENTRYPOINT chmod a+x entrypoint.sh && ./entrypoint.sh
