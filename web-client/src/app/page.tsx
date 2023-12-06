@@ -1,13 +1,27 @@
 'use client' // Because of the 'useEffect' in the custom hook
 
+import axios from 'axios';
 import Card from './components/card';
-import useArticles, { Article } from './hooks/useArticles';
+import { useEffect, useState } from 'react';
 
+export interface Article {
+  title: String,
+  content: String,
+  tags: Array<String>
+}
 
 const Home = () => {
-  const [articles, isLoading, error] = useArticles()
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  console.log(articles)
+  useEffect(() => {
+    const getArticles = async () => {
+      const response = await axios.post("http://172.18.0.3:8080/api/articles");
+      console.log(response);
+    }
+
+    getArticles();
+  }, [])
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
