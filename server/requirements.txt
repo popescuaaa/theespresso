@@ -18,3 +18,4 @@ soupsieve==2.5
 urllib3==2.1.0
 Werkzeug==3.0.1
 wrapt==1.16.0
+Flask-Cors==4.0.0

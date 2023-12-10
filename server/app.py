@@ -3,12 +3,14 @@ from flask import Flask, request
 from dotenv import load_dotenv
 from api import get_articles
 from flask_caching import Cache
+from flask_cors import CORS
 
 """ Load .env file """
 load_dotenv(dotenv_path=".env", verbose=True)
 
 """ Create Flask app """
 app = Flask(__name__)
+CORS(app)
 
 """ Add config parameters to app """
 app.config.from_object("config.Config")
